@@ -21,7 +21,7 @@ Durante o desenvolvimento deste projeto, foram utilizadas as seguintes bibliotec
 - PostgreSQL: Um sistema de gerenciamento de banco de dados relacional.
 - Outras bibliotecas Python, conforme necessário para lidar com validação de dados e funcionalidades específicas.
 
-## Instruções de Uso
+## Como usar: 
 Para executar este projeto em seu ambiente local, siga estas etapas:
 
 1. Clone este repositório para o seu computador.
@@ -32,3 +32,13 @@ Para executar este projeto em seu ambiente local, siga estas etapas:
    python -m venv venv
    source venv/bin/activate  # No Windows, use 'venv\Scripts\activate'
    pip install -r requirements.txt
+
+
+    Configure o banco de dados PostgreSQL e atualize as configurações no arquivo .env.
+
+    Execute a aplicação:
+
+    bash
+    Copy code
+    flask run
+    Acesse a aplicação em seu navegador web em http://localhost:5000.
