@@ -7,6 +7,7 @@ Este é um projeto de desenvolvimento de uma aplicação web para o cadastro de 
 O principal objetivo deste projeto é aprender e praticar o desenvolvimento de aplicativos web com foco no backend. Os principais tópicos de aprendizado incluem:
 
 - Configuração do ambiente de desenvolvimento com Python, Flask e PostgreSQL.
+   - Configuração de Variáveis de ambiente:
 - Criação de um banco de dados PostgreSQL e definição da estrutura de dados.
 - Implementação de recursos de autenticação, incluindo registro, login e gerenciamento de sessões.
 - Desenvolvimento de páginas web simples para apresentar informações aos usuários.
