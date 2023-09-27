@@ -9,3 +9,5 @@ class Usuário(db.Model):
     pis = db.Column(db.String(11), uniqu=True)
     senha = db.Column(db.String(128))
 
+endereco_id = db.Column(db.Integer, db.ForeignKey('endereço_id'))
+endereco = db.relationship('Endereco', back_populates='usuario')
