@@ -10,3 +10,6 @@ class Endereco(db.Model):
     rua = db.Column(db.String(150))
     numero = db.Column(db.String(10))
     complemento = db.Column(db.String(100))
+
+
+usuario = db.relationship('Usuario', back_populates='endereco')
