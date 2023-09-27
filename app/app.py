@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, flask_sqlalchemy, SQLAlchemy
 from dotenv import load_dotenv, os
 
 load_dotenv()
