@@ -1,5 +1,7 @@
-from flask import Flask, flask_sqlalchemy, SQLAlchemy
-from dotenv import load_dotenv, os
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+import os
+from dotenv import load_dotenv
 
 load_dotenv()
 
