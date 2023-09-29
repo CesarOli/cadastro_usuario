@@ -1,0 +1,4 @@
+#Arquivos a serem ignorados
+
+.env
+requirements.txt
