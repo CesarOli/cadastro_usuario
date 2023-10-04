@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -6,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 SECRET_KEY = os.getenv("chave_secreta")
-DATABASE_URL = os.getenv("postgresql://cesar:123456@localhost/cadastro_de_usuario")
+DATABASE_URL = os.getenv("DATABASE_URL")
 DEBUG = os.getenv("DEBUG")
 
 
