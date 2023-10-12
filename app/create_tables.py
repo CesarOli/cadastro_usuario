@@ -1,5 +1,5 @@
 from app import app, db
-import models
+import models.address_model
 
 with app.app_context():
 
