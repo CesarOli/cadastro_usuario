@@ -19,4 +19,8 @@ def cadastrar_usuario():
         #criação de uma nova instância do modelo de usuário cadastrado.
         novo_usuario = user_model(nome=nome, email=email, cpf=cpf, pis=pis, senha=senha)
 
-        
+        #adição da instância criada ao banco de dados.
+        db.session.add(novo_usuario)
+
+        #salva a transação no banco de dados.
+        db.session.commit()
