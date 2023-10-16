@@ -7,6 +7,9 @@ from app import app, db
 #Inicialização da aplicação Flask
 app = Flask(__name__)
 
+#Declaração chave secreta
+app.secret_key = "chave_secreta"
+
 #criação da rota/url 'cadastro'
 @app.route('/cadastro', methods=['POST'])
 
