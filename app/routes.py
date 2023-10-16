@@ -4,6 +4,8 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, Length
 from app import app, db
 
+#Inicialização da aplicação Flask
+app = Flask(__name__)
 
 #criação da rota/url 'cadastro'
 @app.route('/cadastro', methods=['POST'])
