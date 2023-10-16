@@ -1,6 +1,9 @@
-from models import user_model
+from flask import Flask, render_template, request, jsonify
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Email, Length
 from app import app, db
-from flask import request, jsonify
+
 
 #criação da rota/url 'cadastro'
 @app.route('/cadastro', methods=['POST'])
