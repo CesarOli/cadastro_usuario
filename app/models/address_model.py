@@ -11,5 +11,5 @@ class Endereco(db.Model):
     numero = db.Column(db.String(10))
     complemento = db.Column(db.String(100))
 
-
+    usuarios_id = db.Column(db.Integer, db.ForeignKey('usuarios_id'))
     usuarios = db.relationship('Usuario', back_populates='endereco')
