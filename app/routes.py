@@ -32,3 +32,5 @@ def cadastrar_usuario():
 
         #salva a transação no banco de dados.
         db.session.commit()
+
+        return jsonify({'message:''Usuário cadastrado com sucesso!!'})
