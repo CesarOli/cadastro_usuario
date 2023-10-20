@@ -21,6 +21,7 @@ class CpfUnico(object):
 class CadastroUsuario(FlaskForm):
     nome = StringField('Nome', validators=[DataRequired(), Length(min=2, max=90)])
     email = StringField('Email', validators=[DataRequired(), Email()])
+    cpf = StringField('CPF', validators=[DataRequired(), Length(min=11,max=11), Regexp(r'^\d{11}$', message='CPF inválido'), CpfUnico()])
     senha =PasswordField('Senha', validators=[DataRequired()])
     submit = SubmitField('Cadastrar')
 
