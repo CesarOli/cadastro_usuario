@@ -5,6 +5,7 @@ from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, Length, Regexp, ValidationError
 from app import app, db
 from models import user_model, Usuario
+from flask_wtf.csrf import CSRFProtect
 
 #Inicialização da aplicação Flask
 app = Flask(__name__)
