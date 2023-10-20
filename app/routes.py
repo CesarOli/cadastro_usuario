@@ -1,7 +1,8 @@
+from typing import Any
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Email, Length
+from wtforms.validators import DataRequired, Email, Length, Regexp, ValidationError
 from app import app, db
 from models import user_model, Usuario
 
@@ -10,6 +11,12 @@ app = Flask(__name__)
 
 #Declaração chave secreta
 app.secret_key = "chave_secreta"
+
+class CpfUnico(object):
+    def __call__(self, formulario, field):
+        usuario = db.session.query(Usuario).filter_by(cpf=field.data).first()
+        if usuario is not None:
+            raise ValidationError('CPF já cadastrado.')
 
 class CadastroUsuario(FlaskForm):
     nome = StringField('Nome', validators=[DataRequired(), Length(min=2, max=90)])
