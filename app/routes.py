@@ -10,6 +10,8 @@ from flask_wtf.csrf import CSRFProtect
 #Inicialização da aplicação Flask
 app = Flask(__name__)
 
+csrf = CSRFProtect(app)
+
 #Declaração chave secreta
 app.secret_key = "chave_secreta"
 
