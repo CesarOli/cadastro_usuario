@@ -17,6 +17,12 @@ class CpfUnico(object):
         usuario = db.session.query(Usuario).filter_by(cpf=field.data).first()
         if usuario is not None:
             raise ValidationError('CPF já cadastrado.')
+        
+class PisUnico(object):
+    def __call__(self, formulario, field):
+        usuario = db.session.query(Usuario).filter_by(pis=field.data).first()
+        if usuario is not None:
+            raise ValidationError('PIS já cadastrado')
 
 class CadastroUsuario(FlaskForm):
     nome = StringField('Nome', validators=[DataRequired(), Length(min=2, max=90)])
