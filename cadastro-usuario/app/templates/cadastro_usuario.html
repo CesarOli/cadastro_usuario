@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+    <h1>Cadastro de Usuário</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}  {# Adicione o campo hidden_tag para lidar com CSRF #}
+        <div>
+            <label for="nome">Nome:</label>
+            {{ form.nome(class="form-control") }}
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            {{ form.email(class="form-control") }}
+        </div>
+        <div>
+            <label for="cpf">Cpf:</label>
+            {{ form.cpf(class="form-control") }}
+        </div>
+        <div>
+            <label for="pis">Pis:</label>
+            {{ form.pis(class="form-control") }}
+        </div>
+        <div>
+            <label for="senha">Senha:</label>
+            {{ form.senha(class="form-control") }}
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+    </form>
+</body>
+</html>
+
