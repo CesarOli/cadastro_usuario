@@ -7,8 +7,6 @@ from wtforms.validators import DataRequired, Email, Length, Regexp, ValidationEr
 from dotenv import load_dotenv
 import os
 from flask_wtf.csrf import CSRFProtect
-#from app.user_model import Usuario
-
 
 load_dotenv()
 
@@ -20,27 +18,14 @@ app.secret_key = "chave_secreta"
 
 db = SQLAlchemy(app)
 
-class CpfUnico(object):
-    def __call__(self, formulario, field):
-        
-        usuario = db.session.query(Usuario).filter_by(cpf=field.data).first()
-        if usuario is not None:
-            raise ValidationError('CPF já cadastrado.')
-        
-class PisUnico(object):
-    def __call__(self, formulario, field):
-        usuario = db.session.query(Usuario).filter_by(pis=field.data).first()
-        if usuario is not None:
-            raise ValidationError('PIS já cadastrado')
-
-class CadastroUsuario(FlaskForm):
+'''class CadastroUsuario(FlaskForm):
     nome = StringField('Nome', validators=[DataRequired(), Length(min=2, max=90)])
     email = StringField('Email', validators=[DataRequired(), Email()])
     cpf = StringField('CPF', validators=[DataRequired(), Length(min=11,max=11), Regexp(r'^\d{11}$', message='CPF inválido'), CpfUnico()])
     pis = StringField('PIS',validators=[DataRequired(), Length(min=11, max=11), Regexp(r'^\d{11}$', message='PIS inválido'), PisUnico()])
     senha =PasswordField('Senha', validators=[DataRequired()])
     submit = SubmitField('Cadastrar')
-
+'''
 @app.route('/', methods=['GET'])
 def hello():
     return 'Seja Bem Vindo!!!'
@@ -70,7 +55,6 @@ def cadastrar_usuario():
        return redirect(url_for('pagina_de_sucesso'))
     
     return render_template('cadastro_usuario.html', form=formulario)
-
-
+    
 if __name__ == '__main__':
     app.run(debug=True)
