@@ -15,6 +15,7 @@ O principal objetivo deste projeto é aprender e praticar o desenvolvimento de a
 - Implementação de operações CRUD (Criar, Ler, Atualizar, Excluir) para os dados do usuário.
 - Validação de campos de entrada e gerenciamento de erros.
 - Organização modular
+- Criação e Organização de Classes
 
 ## Bibliotecas Utilizadas
 Durante o desenvolvimento deste projeto, foram utilizadas as seguintes bibliotecas e frameworks:
